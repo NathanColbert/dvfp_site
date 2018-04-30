@@ -14,3 +14,7 @@ navbar:
     - text: "Cadential Frequency: By Composer"
       href: barchart2.html
     
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
