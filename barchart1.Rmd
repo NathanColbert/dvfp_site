@@ -3,9 +3,18 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.height=6, fig.width=10}
 library(ggplot2)
 library(dplyr)
+library(ggthemes)
+
+t <- read.csv("tchaikovsky2.csv")
+r <- read.csv("rachmaninoff2.csv")
+c <- read.csv("chopin.csv")
+br <- read.csv("brahms.csv")
+be <- read.csv("berlioz.csv")
+st <- read.csv("strauss.csv")
+Composers <- rbind(r, t, c, br, be)
 tone_cols <- c("Major" = "Blue", "Minor" = "Dark Red", "Unknown" = "Black")
 r_V <- Composers %>% filter(one_lag_tran == "Gdom7", tran_chord_named != "Gdom7",
                             tran_chord_named != "Gmaj")
@@ -22,21 +31,3 @@ g2
 ```
 
 
-```{r, echo=FALSE}
-
-tone_cols <- c("Major" = "Blue", "Minor" = "Dark Red", "Unknown" = "Black")
-tone_opac <- c("Major" = 20, "Minor" = 10)
-r_V <- Composers %>% filter(one_lag_tran == "Gdom7", tran_chord_named != "Gdom7",
-                            tran_chord_named != "Gmaj")
-
-g2 <- ggplot(r_V, aes(x = norm_roman_num)) + geom_bar(aes(fill = Tonality)) + 
-  theme_tufte() + ggtitle("Cadential Frequency: Chords Following V")  +
-  xlab("Roman Numerals") + ylab("Count") + theme(legend.position = "none") + 
-  facet_grid(composer ~ Tonality) + coord_flip() +
-  scale_fill_manual(values = tone_cols) # example barchart
-
-ggplotly(g2)
-
-
-#Done for now!
-```
