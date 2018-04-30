@@ -1,6 +1,5 @@
 name: "DVFP FINAL PROJECY"
 navbar:
-  title: "Harmonic Variance in Romantic Music"
   type: inverse
   left:
     - text: "Composers and Their Lives"
@@ -14,7 +13,3 @@ navbar:
     - text: "Cadential Frequency: By Composer"
       href: barchart2.html
     
-output:
-  html_document:
-    theme: cosmo
-    highlight: textmate
