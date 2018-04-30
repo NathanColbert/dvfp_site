@@ -3,7 +3,7 @@ navbar:
   title: "Harmonic Variance in Romantic Music"
   left:
     - text: "Composers and Their Lives"
-      href: DVFPMAP3.html
+      href: index.html
     - text: "Harmonic Motion by Composer"
       href: linegraph1.html
     - text: "Harmonic Motion by Type of Piece"
