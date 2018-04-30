@@ -4,7 +4,7 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE, fig.height=10, fig.width=15}
+```{r, echo=FALSE, fig.height=20, fig.width=10}
 library(ggplot2)
 g<- ggplot(comp_short, aes(x = time, y = Roman_Numeral, group = Piece)) +
   geom_point(size = .2) + geom_line(aes(color = Piece), alpha = .25)  + theme_tufte() +
