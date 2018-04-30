@@ -4,7 +4,7 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=10}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height=10, fig.width=15}
 library(ggrepel)
 library(plotly)
 library(ggthemes)
@@ -37,7 +37,7 @@ g<- ggplot(comp_short, aes(x = time, y = Roman_Numeral, group = Piece)) +
                                            axis.text.x = element_blank(),
                                            legend.title = element_blank(),
                                          legend.position = "none") + 
-  ylab(NULL) + xlab("Roman Numerals") +
+  ylab(NULL) + xlab(NULL) +
   ggtitle("Harmonic Movement Among Romantic Era Composers")
 
 ggplotly(g, tooltip = c("y", "colour")) # lineplot attempt faceted by composer eventually by country 
