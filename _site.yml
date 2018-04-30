@@ -10,6 +10,5 @@ navbar:
       href: linegraph2.html
     - text: "Cadential Frequency: Chords Following V"
       href: barchart1.html
-    - text: "Cadential Frequency: By Composer"
-      href: barchart2.html
+
     
