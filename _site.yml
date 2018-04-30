@@ -1,6 +1,7 @@
 name: "DVFP FINAL PROJECY"
 navbar:
   title: "Harmonic Variance in Romantic Music"
+  type: inverse
   left:
     - text: "Composers and Their Lives"
       href: index.html
