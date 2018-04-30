@@ -1,0 +1,44 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=10}
+library(ggrepel)
+library(plotly)
+library(ggthemes)
+t <- read.csv("tchaikovsky2.csv")
+r <- read.csv("rachmaninoff2.csv")
+c <- read.csv("chopin.csv")
+br <- read.csv("brahms.csv")
+be <- read.csv("berlioz.csv")
+st <- read.csv("strauss.csv")
+Composers <- rbind(r, t, c, br, be)
+
+
+comp_short <- Composers %>% filter(time <= 15000)
+
+cols <- c("Rachmaninoff" = "Dark Red",
+          "Tchaikovsky" = "Gold", 
+          "Brahms" = "Dark Green",
+          "Berlioz" = "Violet", 
+          "Chopin" = "Light Blue", 
+          "Beethoven" = "Brown",
+          "Dvorak" = "Gray",
+          "Verdi" = "Orange",
+          "Mahler"= "Light Green")
+
+Piece <- comp_short$piece
+Roman_Numeral <- comp_short$norm_roman_num
+g<- ggplot(comp_short, aes(x = time, y = Roman_Numeral, group = Piece)) +
+  geom_point(size = .2) + geom_line(aes(color = Piece), alpha = .25)  + theme_tufte() +
+  facet_wrap(~composer, nrow = 6) +theme(axis.ticks = element_blank(),
+                                           axis.text.x = element_blank(),
+                                           legend.title = element_blank(),
+                                         legend.position = "none") + 
+  ylab(NULL) + xlab("Roman Numerals") +
+  ggtitle("Harmonic Movement Among Romantic Era Composers")
+
+ggplotly(g, tooltip = c("y", "colour")) # lineplot attempt faceted by composer eventually by country 
+```
