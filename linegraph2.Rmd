@@ -4,10 +4,10 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r, echo=FALSE}
 g<- ggplot(comp_short, aes(x = time, y = Roman_Numeral, group = Piece)) +
   geom_point(size = .2) + geom_line(aes(color = Piece), alpha = .25)  + theme_tufte() +
-  facet_wrap(~Type, nrow = 6) +theme(axis.ticks = element_blank(),
+  facet_wrap(~Type, nrow = 11) +theme(axis.ticks = element_blank(),
                                            axis.text.x = element_blank(),
                                            legend.title = element_blank(),
                                          legend.position = "none") + 

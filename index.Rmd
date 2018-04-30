@@ -1,5 +1,5 @@
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 20, fig.height=10}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
 library(dplyr)
 map <- read.csv("DVFP Composer Travels.csv", header = TRUE) # Moved coordinates slightly
